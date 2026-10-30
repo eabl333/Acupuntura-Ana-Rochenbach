@@ -5,76 +5,484 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Acupuntura em Alphaville, Barueri | Ana Rochenbach</title>
 <meta name="description" content="Acupuntura e terapias naturais em Alphaville, Barueri, com Ana Rochenbach. Avaliação individual, atendimento acolhedor e nota 5,0 no Google.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="theme-color" content="#1f4a38">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalBusiness", "name": "Ana Rochenbach – Acupuntura e Terapias Naturais", "telephone": "+55 66 99234-4454", "url": "https://SEU-DOMINIO.com.br/", "address": {"@type": "PostalAddress", "streetAddress": "Av. Cauaxi, 293 - Sl 314", "addressLocality": "Barueri", "addressRegion": "SP", "postalCode": "06454-020", "addressCountry": "BR"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "29"}}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MedicalBusiness","name":"Ana Rochenbach – Acupuntura e Terapias Naturais","telephone":"+55 66 99234-4454","url":"https://SEU-DOMINIO.com.br/","address":{"@type":"PostalAddress","streetAddress":"Av. Cauaxi, 293 - Sl 314","addressLocality":"Barueri","addressRegion":"SP","postalCode":"06454-020","addressCountry":"BR"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"29"}}
+</script>
+<style>
+:root{--green-900:#1f4a38;--green-700:#2f6b52;--green-600:#5b8c67;--green-500:#7fc98f;--teal:#0f8a73;--mist:#eef5f0;--ink:#26332d;--muted:#5c6b63;--line:#d9e5dd;--white:#fff;--r:6px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:400 17px/1.7 "Open Sans",system-ui,sans-serif;color:var(--ink);background:#fff}
+img{max-width:100%;display:block}
+a{color:var(--teal)}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;line-height:1.1;color:var(--green-900);margin:0 0 .5em}
+h1{font-size:clamp(2.6rem,6vw,4.6rem)}
+h2{font-size:clamp(1.9rem,3.5vw,2.8rem)}
+h3{font-size:1.5rem}
+section[id]{scroll-margin-top:90px}
+.wrap{width:min(1160px,92%);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:.6rem 1rem;z-index:100}
+.skip:focus{left:8px;top:8px}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+
+/* Topbar */
+.topbar{background:var(--green-500);color:#10331f;font-size:.82rem;font-weight:600}
+.topbar a{color:inherit;text-decoration:none}
+.topbar a:hover{text-decoration:underline}
+.topbar-in{display:flex;justify-content:space-between;gap:1rem;padding:.45rem 0;flex-wrap:wrap}
+.topbar p{margin:0}
+.social a{margin-left:1rem}
+
+/* Header */
+.header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);transition:box-shadow .2s}
+.header.scrolled{box-shadow:0 6px 20px rgba(20,50,35,.1)}
+.header-in{display:flex;align-items:center;justify-content:space-between;min-height:84px;gap:1rem}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--green-900)}
+.logo-mark{width:46px;height:46px;color:var(--green-900)}
+.brand span{font-family:"Cormorant Garamond",serif;font-size:1.55rem;font-weight:600;line-height:1}
+.brand small{display:block;font:600 .68rem "Open Sans",sans-serif;color:var(--muted);margin-top:.3rem}
+#menu{display:flex;align-items:center;gap:1.4rem}
+#menu>ul{list-style:none;margin:0;padding:0;display:flex;gap:1.5rem}
+#menu a{text-decoration:none;color:var(--ink);font-weight:600;font-size:.92rem}
+#menu li>a:hover,#menu a.active{color:var(--green-600)}
+#menu a.btn{color:#fff}
+.has-sub{position:relative;display:flex;align-items:center;gap:.2rem}
+.sub-toggle{background:none;border:0;padding:.4rem;cursor:pointer;color:var(--ink)}
+.sub{list-style:none;margin:0;padding:.6rem 0;position:absolute;top:100%;left:-1rem;min-width:260px;background:#fff;border-top:3px solid var(--green-500);box-shadow:0 14px 30px rgba(20,50,35,.14);opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s}
+.sub li a{display:block;padding:.7rem 1.4rem}
+.has-sub:hover .sub,.has-sub:focus-within .sub,.has-sub.open .sub{opacity:1;visibility:visible;transform:none}
+.menu-btn{display:none;background:none;border:0;padding:.6rem;cursor:pointer}
+.menu-btn span{display:block;width:26px;height:2px;background:var(--green-900);margin:6px 0;transition:.2s}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* Botões */
+.btn{display:inline-block;background:var(--teal);color:#fff!important;padding:.85rem 1.6rem;border-radius:var(--r);text-decoration:none;border:2px solid var(--teal);cursor:pointer;font:700 .95rem "Open Sans",sans-serif;transition:background .2s,border-color .2s}
+.btn:hover{background:var(--green-900);border-color:var(--green-900)}
+.btn-sm{padding:.55rem 1.1rem}
+.btn-ghost{background:transparent;color:var(--green-900)!important;border-color:var(--green-600)}
+.btn-ghost:hover{background:var(--mist);border-color:var(--green-600)}
+.btn-light{background:#fff;color:var(--green-900)!important;border-color:#fff}
+.btn-light:hover{background:var(--mist);border-color:var(--mist)}
+
+/* Hero */
+.hero{position:relative;background:var(--green-600);color:#fff;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,#4d7d5a 0 52%,transparent 52%),var(--green-700)}
+.hero-art{position:absolute;right:-90px;bottom:-110px;width:520px;opacity:.1;color:#fff}
+.hero-art svg{width:100%;height:auto;color:#fff}
+.hero-in{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;padding:5rem 0}
+.hero h1{color:#fff;font-weight:400}
+.hero .lead{font-size:1.15rem;max-width:34ch;color:#eaf5ee}
+.actions{display:flex;gap:1rem;flex-wrap:wrap;margin:2rem 0 1.4rem}
+.hero .btn{background:#fff;color:var(--green-900)!important;border-color:#fff}
+.hero .btn:hover{background:var(--mist)}
+.hero .btn-ghost{background:transparent;color:#fff!important;border-color:#fff}
+.hero .btn-ghost:hover{background:rgba(255,255,255,.15)}
+.rating{font-size:.9rem;margin:0}
+.rating strong{font-family:"Cormorant Garamond",serif;font-size:1.8rem;margin-right:.3rem}
+.photo{background:repeating-linear-gradient(135deg,#dfece3 0 14px,#d3e4d9 14px 28px);color:var(--green-700);display:grid;place-items:center;text-align:center;font-size:.85rem;font-weight:600;min-height:340px;border-radius:var(--r);overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.hero-photo{min-height:440px;clip-path:polygon(14% 0,100% 0,100% 100%,0 100%)}
+
+/* Seções */
+.section{padding:5rem 0}
+.alt{background:var(--mist)}
+.sub-lead{color:var(--muted);max-width:56ch;margin:-.2rem 0 2.2rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem}
+.cards.three{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{display:block;background:#fff;border:1px solid var(--line);border-left:4px solid var(--green-500);padding:1.6rem;border-radius:var(--r);text-decoration:none;color:var(--ink);transition:border-color .2s,transform .2s}
+a.card:hover{border-left-color:var(--teal);transform:translateY(-3px)}
+.card p{color:var(--muted);margin:0 0 1rem;font-size:.95rem}
+.more{color:var(--teal);font-weight:700;font-size:.9rem}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.steps{list-style:none;counter-reset:s;padding:0;margin:2rem 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:2rem}
+.steps li{counter-increment:s;border-top:3px solid var(--green-500);padding-top:1rem}
+.steps h3::before{content:counter(s) ". ";color:var(--teal)}
+.steps p{margin:0;color:var(--muted);font-size:.95rem}
+.quote{margin:0;background:#fff;padding:1.8rem;border-radius:var(--r);border:1px solid var(--line)}
+.quote p{font-family:"Cormorant Garamond",serif;font-size:1.35rem;line-height:1.4;margin:0 0 .8rem;color:var(--green-900)}
+.center{text-align:center;margin-top:2.4rem}
+
+/* Tratamentos detalhados */
+.treat{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.6rem}
+.treat article{background:#fff;border:1px solid var(--line);border-top:4px solid var(--green-500);border-radius:var(--r);padding:1.8rem}
+.treat p{color:var(--muted);margin:0 0 .8rem}
+.ticks{list-style:none;padding:0;margin:.8rem 0 0}
+.ticks li{padding-left:1.6rem;position:relative;margin:.35rem 0;font-size:.95rem}
+.ticks li::before{content:"";position:absolute;left:0;top:.8em;width:.7rem;height:2px;background:var(--teal)}
+.note{font-size:.88rem;color:var(--muted);border-top:1px solid var(--line);padding-top:1rem;margin-top:2rem}
+
+/* FAQ */
+.faq{max-width:760px}
+details{border-bottom:1px solid var(--line);padding:1rem 0}
+summary{cursor:pointer;font-weight:700;color:var(--green-900);list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--teal)}
+details[open] summary::after{content:"–"}
+details p{margin:.8rem 0 0;color:var(--muted)}
+
+/* Avaliações */
+.score{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+.score strong{font:500 4.5rem "Cormorant Garamond",serif;color:var(--green-900);line-height:1}
+.stars{color:#e0a82e;font-size:1.5rem;letter-spacing:.1em}
+
+/* Contato */
+.info{display:grid;gap:1.2rem;margin:1.6rem 0}
+.info dt{font-weight:700;color:var(--green-900)}
+.info dd{margin:0;color:var(--muted)}
+.form{display:grid;gap:.4rem;background:#fff;padding:2rem;border:1px solid var(--line);border-radius:var(--r)}
+.form label{font-weight:600;font-size:.9rem;margin-top:.7rem}
+.form input,.form select,.form textarea{font:inherit;padding:.8rem;border:1px solid #b9cbbf;border-radius:var(--r);width:100%;background:#fff}
+.form button{margin-top:1.2rem;justify-self:start}
+.map iframe{display:block;width:100%;height:380px;border:0}
+
+/* CTA e rodapé */
+.cta-band{background:var(--teal);color:#fff;text-align:center;padding:4rem 0}
+.cta-band h2{color:#fff;margin-bottom:.3em}
+.cta-band p{margin:0 0 1.6rem}
+.footer{background:var(--green-900);color:#cfe0d5;padding-top:3.5rem;font-size:.92rem}
+.footer a{color:#fff;text-decoration:none}
+.footer a:hover{text-decoration:underline}
+.footer h3{font:700 1rem "Open Sans",sans-serif;color:#fff}
+.footer ul{list-style:none;padding:0;margin:0}
+.footer li{margin:.4rem 0}
+.brand-foot,.brand-foot .logo-mark{color:#fff}
+.brand-foot small{color:#a9c4b4}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1.4fr;gap:2.5rem}
+.legal{border-top:1px solid #3b6652;margin-top:2.5rem;padding:1.2rem 0;font-size:.82rem}
+.legal p{margin:0}
+.wa-float{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:60;transition:transform .2s}
+.wa-float:hover{transform:scale(1.08)}
+
+/* Animação de entrada */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+
+/* Mobile */
+@media(max-width:960px){
+ .menu-btn{display:block}
+ #menu{position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;padding:1rem 4%;display:none;max-height:75vh;overflow:auto}
+ #menu.open{display:flex}
+ #menu>ul{flex-direction:column;gap:0}
+ #menu>ul>li{border-bottom:1px solid var(--line);flex-wrap:wrap;justify-content:space-between}
+ #menu>ul>li>a{padding:.9rem 0;flex:1}
+ #menu a.btn{text-align:center}
+ .sub{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;display:none;width:100%;padding:0 0 .6rem 1rem}
+ .has-sub.open .sub{display:block}
+ .has-sub:hover .sub{display:none}
+ .has-sub.open:hover .sub{display:block}
+ .hero-in,.split,.foot-grid{grid-template-columns:1fr}
+ .hero-photo{clip-path:none;min-height:300px}
+ .section{padding:3.5rem 0}
+ .split{gap:2rem}
+ .topbar-in{font-size:.75rem}
+ .social{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ *{transition:none!important;scroll-behavior:auto!important}
+ .reveal{opacity:1;transform:none}
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
 <div class="topbar"><div class="wrap topbar-in">
- <p><a href="tel:+5566992344454">(66) 99234-4454</a> · <a href="https://wa.me/5566992344454">WhatsApp</a> · <a href="https://www.google.com/maps/search/?api=1&query=Av.+Cauaxi,+293+-+Alphaville+Centro+Industrial,+Barueri+-+SP" target="_blank" rel="noopener">Av. Cauaxi, 293 - Sl 314 - Alphaville Centro Industrial, Barueri - SP, 06454-020</a></p>
+ <p><a href="tel:+5566992344454">(66) 99234-4454</a> · <a href="https://wa.me/5566992344454" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://www.google.com/maps/search/?api=1&query=Av.+Cauaxi,+293+-+Alphaville+Centro+Industrial,+Barueri+-+SP" target="_blank" rel="noopener">Av. Cauaxi, 293 - Sl 314 - Alphaville Centro Industrial, Barueri - SP, 06454-020</a></p>
  <p class="social"><a href="#" rel="noopener">Instagram</a><a href="#" rel="noopener">Facebook</a></p>
 </div></div>
-<header class="header"><div class="wrap header-in">
- <a class="brand" href="index.html"><svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="2"/><path d="M32 4a28 28 0 0 1 0 56 14 14 0 0 1 0-28 14 14 0 0 0 0-28z" fill="currentColor"/><circle cx="32" cy="18" r="4" fill="#fff"/><circle cx="32" cy="46" r="4" fill="currentColor"/></svg><span>Ana Rochenbach<small>Acupuntura e Terapias Naturais</small></span></a>
+
+<header class="header" id="topo"><div class="wrap header-in">
+ <a class="brand" href="#topo">
+  <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="2"/><path d="M32 4a28 28 0 0 1 0 56 14 14 0 0 1 0-28 14 14 0 0 0 0-28z" fill="currentColor"/><circle cx="32" cy="18" r="4" fill="#fff"/><circle cx="32" cy="46" r="4" fill="currentColor"/></svg>
+  <span>Ana Rochenbach<small>Acupuntura e Terapias Naturais</small></span>
+ </a>
  <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
- <nav id="menu" aria-label="Principal"><ul><li><a href="index.html" aria-current="page">Home</a></li><li class="has-sub"><a href="tratamentos.html">Tratamentos</a><button class="sub-toggle" aria-label="Abrir submenu Tratamentos" aria-expanded="false"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="sub"><li><a href="acupuntura.html">Acupuntura</a></li><li><a href="acupuntura-gestantes.html">Acupuntura para gestantes</a></li><li><a href="dores-e-ciatico.html">Dores e ciático</a></li><li><a href="terapias-complementares.html">Terapias complementares</a></li></ul></li><li class="has-sub"><a href="sobre.html">A clínica</a><button class="sub-toggle" aria-label="Abrir submenu A clínica" aria-expanded="false"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="sub"><li><a href="sobre.html">Ana Rochenbach</a></li><li><a href="historia-da-acupuntura.html">História da acupuntura</a></li></ul></li><li><a href="duvidas.html">Dúvidas</a></li><li><a href="avaliacoes.html">Avaliações</a></li><li><a href="contato.html">Contato</a></li></ul><a class="btn btn-sm" href="https://wa.me/5566992344454?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" rel="noopener">Agendar</a></nav>
+ <nav id="menu" aria-label="Principal">
+  <ul>
+   <li><a href="#topo">Home</a></li>
+   <li class="has-sub"><a href="#tratamentos">Tratamentos</a>
+    <button class="sub-toggle" aria-label="Abrir submenu Tratamentos" aria-expanded="false"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+    <ul class="sub">
+     <li><a href="#acupuntura">Acupuntura</a></li>
+     <li><a href="#gestantes">Acupuntura para gestantes</a></li>
+     <li><a href="#dores">Dores e ciático</a></li>
+     <li><a href="#complementares">Terapias complementares</a></li>
+    </ul>
+   </li>
+   <li><a href="#clinica">A clínica</a></li>
+   <li><a href="#duvidas">Dúvidas</a></li>
+   <li><a href="#avaliacoes">Avaliações</a></li>
+   <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a class="btn btn-sm" href="https://wa.me/5566992344454?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" rel="noopener">Agendar</a>
+ </nav>
 </div></header>
+
 <main id="conteudo">
 
-<section class="hero"><div class="hero-art" aria-hidden="true"><svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="2"/><path d="M32 4a28 28 0 0 1 0 56 14 14 0 0 1 0-28 14 14 0 0 0 0-28z" fill="currentColor"/><circle cx="32" cy="18" r="4" fill="#fff"/><circle cx="32" cy="46" r="4" fill="currentColor"/></svg></div><div class="wrap hero-in">
- <div class="hero-copy"><h1>Cuidado que começa por escutar você.</h1>
- <p class="lead">Acupuntura e terapias naturais em Alphaville, com atenção a cada detalhe do seu atendimento.</p>
- <div class="actions"><a class="btn" href="https://wa.me/5566992344454?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" rel="noopener">Agendar avaliação</a><a class="btn btn-ghost" href="tratamentos.html">Ver tratamentos</a></div>
- <p class="rating"><strong>5,0</strong> no Google · 29 avaliações</p></div>
- <div class="hero-photo photo" role="img" aria-label="Foto de Ana Rochenbach"><!-- TROCAR: <img src="img/ana.jpg" alt="Ana Rochenbach, acupunturista"> --><span>Foto da Ana<br>(img/ana.jpg)</span></div>
+<section class="hero">
+ <div class="hero-art" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="2"/><path d="M32 4a28 28 0 0 1 0 56 14 14 0 0 1 0-28 14 14 0 0 0 0-28z" fill="currentColor"/><circle cx="32" cy="18" r="4" fill="#fff"/><circle cx="32" cy="46" r="4" fill="currentColor"/></svg></div>
+ <div class="wrap hero-in">
+  <div class="hero-copy">
+   <h1>Cuidado que começa por escutar você.</h1>
+   <p class="lead">Acupuntura e terapias naturais em Alphaville, com atenção a cada detalhe do seu atendimento.</p>
+   <div class="actions">
+    <a class="btn" href="https://wa.me/5566992344454?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" rel="noopener">Agendar avaliação</a>
+    <a class="btn btn-ghost" href="#tratamentos">Ver tratamentos</a>
+   </div>
+   <p class="rating"><strong>5,0</strong> no Google · 29 avaliações</p>
+  </div>
+  <!-- Para usar foto real: troque o conteúdo abaixo por <img src="img/ana.jpg" alt="Ana Rochenbach, acupunturista"> -->
+  <div class="hero-photo photo" role="img" aria-label="Foto de Ana Rochenbach"><span>Foto da Ana<br>(img/ana.jpg)</span></div>
+ </div>
+</section>
+
+<section class="section" id="tratamentos"><div class="wrap">
+ <h2>Tratamentos</h2>
+ <p class="sub-lead">Escolha por onde começar. Na avaliação, o plano é montado para você.</p>
+ <div class="cards reveal">
+  <a class="card" href="#acupuntura"><h3>Acupuntura</h3><p>Avaliação individual e agulhas descartáveis, com foco no seu motivo de consulta.</p><span class="more">Saiba mais</span></a>
+  <a class="card" href="#gestantes"><h3>Acupuntura para gestantes</h3><p>Acompanhamento cuidadoso durante a gestação e no pós-parto.</p><span class="more">Saiba mais</span></a>
+  <a class="card" href="#dores"><h3>Dores e ciático</h3><p>Atendimento para dores musculares, coluna e dor ciática.</p><span class="more">Saiba mais</span></a>
+  <a class="card" href="#complementares"><h3>Terapias complementares</h3><p>Ventosaterapia, moxabustão, auriculoterapia e outras técnicas.</p><span class="more">Saiba mais</span></a>
+ </div>
 </div></section>
-<section class="section"><div class="wrap">
- <h2>Tratamentos</h2><p class="sub-lead">Escolha por onde começar. Na avaliação, o plano é montado para você.</p>
- <div class="cards">
-  <a class="card" href="acupuntura.html"><h3>Acupuntura</h3><p>Avaliação individual e agulhas descartáveis, com foco no seu motivo de consulta.</p><span class="more">Saiba mais</span></a>
-  <a class="card" href="acupuntura-gestantes.html"><h3>Acupuntura para gestantes</h3><p>Acompanhamento cuidadoso durante a gestação e no pós-parto.</p><span class="more">Saiba mais</span></a>
-  <a class="card" href="dores-e-ciatico.html"><h3>Dores e ciático</h3><p>Atendimento para dores musculares, coluna e dor ciática.</p><span class="more">Saiba mais</span></a>
-  <a class="card" href="terapias-complementares.html"><h3>Terapias complementares</h3><p>Ventosaterapia, moxabustão, auriculoterapia e outras técnicas.</p><span class="more">Saiba mais</span></a>
- </div></div></section>
-<section class="section alt"><div class="wrap split">
- <div class="photo" role="img" aria-label="Espaço de atendimento"><!-- TROCAR: <img src="img/espaco.jpg" alt="Sala de atendimento"> --><span>Foto do espaço<br>(img/espaco.jpg)</span></div>
- <div><h2>Um espaço pensado para acolher</h2>
- <p>Uma cliente descreveu assim o consultório: um espaço lindo e especial, onde se sente cuidado em cada detalhe. É isso que buscamos em cada consulta.</p>
- <p>Você é ouvida, examinada e entende cada etapa do tratamento antes de começar.</p>
- <a class="btn" href="sobre.html">Conhecer a Ana</a></div>
+
+<section class="section alt" id="clinica"><div class="wrap split">
+ <!-- Para usar foto real: <img src="img/espaco.jpg" alt="Sala de atendimento"> -->
+ <div class="photo reveal" role="img" aria-label="Espaço de atendimento"><span>Foto do espaço<br>(img/espaco.jpg)</span></div>
+ <div class="reveal">
+  <h2>Um espaço pensado para acolher</h2>
+  <p>Uma cliente descreveu assim o consultório: um espaço lindo e especial, onde se sente cuidado em cada detalhe. É isso que buscamos em cada consulta.</p>
+  <p>Você é ouvida, examinada e entende cada etapa do tratamento antes de começar.</p>
+  <a class="btn" href="#contato">Falar com a Ana</a>
+ </div>
 </div></section>
+
 <section class="section"><div class="wrap">
  <h2>Como funciona o atendimento</h2>
- <ol class="steps">
+ <ol class="steps reveal">
   <li><h3>Conversa inicial</h3><p>Você conta sua queixa, histórico de saúde e rotina.</p></li>
   <li><h3>Avaliação</h3><p>Análise conforme a medicina tradicional chinesa e exame físico.</p></li>
   <li><h3>Sessão</h3><p>Aplicação com material descartável e orientações para o dia a dia.</p></li>
   <li><h3>Acompanhamento</h3><p>Reavaliamos a cada sessão e ajustamos o plano.</p></li>
- </ol></div></section>
+ </ol>
+</div></section>
+
 <section class="section alt"><div class="wrap">
+ <h2>Detalhes dos tratamentos</h2>
+ <div class="treat">
+  <article id="acupuntura" class="reveal">
+   <h3>Acupuntura</h3>
+   <p>Técnica da medicina tradicional chinesa que utiliza agulhas muito finas em pontos específicos do corpo. Cada plano é montado depois de uma avaliação individual.</p>
+   <ul class="ticks"><li>Agulhas descartáveis</li><li>Avaliação antes da primeira sessão</li><li>Reavaliação a cada atendimento</li></ul>
+  </article>
+  <article id="gestantes" class="reveal">
+   <h3>Acupuntura para gestantes</h3>
+   <p>Atendimento cuidadoso para o período da gestação e do pós-parto, sempre em conjunto com o acompanhamento do seu médico.</p>
+   <ul class="ticks"><li>Avaliação adaptada a cada fase</li><li>Pontos e técnicas escolhidos com critério</li><li>Acolhimento e escuta</li></ul>
+  </article>
+  <article id="dores" class="reveal">
+   <h3>Dores e ciático</h3>
+   <p>Atendimento voltado a dores musculares, dores na coluna e dor ciática, com plano ajustado conforme sua resposta.</p>
+   <ul class="ticks"><li>Avaliação do histórico e da rotina</li><li>Orientações para o dia a dia</li><li>Acompanhamento sessão a sessão</li></ul>
+  </article>
+  <article id="complementares" class="reveal">
+   <h3>Terapias complementares</h3>
+   <p>Técnicas que podem ser associadas à acupuntura, de acordo com a sua avaliação.</p>
+   <ul class="ticks"><li>Ventosaterapia</li><li>Moxabustão</li><li>Auriculoterapia</li></ul>
+  </article>
+ </div>
+ <p class="note">As informações deste site são educativas e não substituem consulta médica. Os resultados variam de pessoa para pessoa.</p>
+</div></section>
+
+<section class="section" id="duvidas"><div class="wrap">
+ <h2>Dúvidas frequentes</h2>
+ <div class="faq reveal">
+  <details><summary>A acupuntura dói?</summary><p>As agulhas são muito finas. A maioria das pessoas sente apenas um leve incômodo ou formigamento. Se algo estiver desconfortável, avise durante a sessão.</p></details>
+  <details><summary>As agulhas são seguras?</summary><p>Utilizamos material descartável, aberto na hora do atendimento.</p></details>
+  <details><summary>Como é a primeira consulta?</summary><p>Começa com uma conversa sobre sua queixa, histórico de saúde e rotina, seguida de avaliação e, se indicado, a primeira sessão.</p></details>
+  <details><summary>Quantas sessões são necessárias?</summary><p>Depende do seu caso. O plano é definido na avaliação e reajustado ao longo do tratamento.</p></details>
+  <details><summary>Gestantes podem fazer acupuntura?</summary><p>Sim, com avaliação e cuidados específicos. Informe sempre sua gestação e mantenha o acompanhamento com seu médico.</p></details>
+  <details><summary>Como agendo?</summary><p>Pelo WhatsApp (66) 99234-4454 ou pelo formulário da seção de contato. O atendimento é com hora marcada.</p></details>
+ </div>
+</div></section>
+
+<section class="section alt" id="avaliacoes"><div class="wrap">
  <h2>O que dizem as pacientes</h2>
- <div class="cards three">
+ <div class="score"><strong>5,0</strong><span class="stars" aria-hidden="true">★★★★★</span><span>29 avaliações no Google</span></div>
+ <div class="cards three reveal">
   <blockquote class="quote"><p>Uma profissional excelente e, acima de tudo, uma pessoa maravilhosa.</p></blockquote>
   <blockquote class="quote"><p>Todas as vezes que eu estava com muitas dores no ciático, Ana me ajudou muito!</p></blockquote>
   <blockquote class="quote"><p>Nesse espaço lindo e especial, sentimos cuidado em cada detalhe.</p></blockquote>
- </div><p class="center"><a class="btn btn-ghost" href="avaliacoes.html">Ver todas as avaliações</a></p></div></section>
+ </div>
+</div></section>
+
+<section class="section" id="contato"><div class="wrap split">
+ <div class="reveal">
+  <h2>Contato</h2>
+  <p>Conte um pouco sobre o que você está sentindo e responderemos pelo WhatsApp.</p>
+  <dl class="info">
+   <div><dt>WhatsApp e telefone</dt><dd><a href="https://wa.me/5566992344454" target="_blank" rel="noopener">(66) 99234-4454</a></dd></div>
+   <div><dt>Endereço</dt><dd>Av. Cauaxi, 293 - Sl 314 - Alphaville Centro Industrial, Barueri - SP, 06454-020</dd></div>
+   <div><dt>Horário</dt><dd>Atendimento com hora marcada. Fecha às 18:00.</dd></div>
+  </dl>
+ </div>
+ <form class="form reveal" id="form-wa">
+  <label for="nome">Seu nome</label>
+  <input id="nome" name="nome" type="text" required autocomplete="name">
+  <label for="motivo">Motivo da consulta</label>
+  <select id="motivo" name="motivo" required>
+   <option value="">Selecione</option>
+   <option>Acupuntura</option>
+   <option>Acupuntura para gestantes</option>
+   <option>Dores e ciático</option>
+   <option>Terapias complementares</option>
+   <option>Outro</option>
+  </select>
+  <label for="msg">Mensagem (opcional)</label>
+  <textarea id="msg" name="msg" rows="4"></textarea>
+  <button class="btn" type="submit">Enviar pelo WhatsApp</button>
+ </form>
+</div></section>
+
+<div class="map">
+ <iframe title="Mapa do consultório" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Av.+Cauaxi,+293,+Alphaville+Centro+Industrial,+Barueri+-+SP&output=embed"></iframe>
+</div>
 
 </main>
+
 <section class="cta-band"><div class="wrap">
  <h2>Vamos conversar sobre o que você está sentindo?</h2>
  <p>Envie uma mensagem e agende sua primeira avaliação.</p>
  <a class="btn btn-light" href="https://wa.me/5566992344454?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" rel="noopener">Chamar no WhatsApp</a>
 </div></section>
-<footer class="footer"><div class="wrap foot-grid">
- <div><a class="brand brand-foot" href="index.html"><svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="2"/><path d="M32 4a28 28 0 0 1 0 56 14 14 0 0 1 0-28 14 14 0 0 0 0-28z" fill="currentColor"/><circle cx="32" cy="18" r="4" fill="#fff"/><circle cx="32" cy="46" r="4" fill="currentColor"/></svg><span>Ana Rochenbach<small>Acupuntura e Terapias Naturais</small></span></a>
- <p>Acupunturista em Alphaville, Barueri. Atendimento com hora marcada.</p></div>
- <div><h3>Páginas</h3><ul><li><a href="tratamentos.html">Tratamentos</a></li><li><a href="sobre.html">A clínica</a></li><li><a href="historia-da-acupuntura.html">História da acupuntura</a></li><li><a href="duvidas.html">Dúvidas frequentes</a></li><li><a href="avaliacoes.html">Avaliações</a></li><li><a href="contato.html">Contato</a></li></ul></div>
- <div><h3>Contato</h3><ul><li><a href="https://wa.me/5566992344454" target="_blank" rel="noopener">WhatsApp (66) 99234-4454</a></li><li>Av. Cauaxi, 293 - Sl 314 - Alphaville Centro Industrial, Barueri - SP, 06454-020</li><li>Fecha às 18:00</li></ul></div>
-</div>
-<div class="wrap legal"><p>© <span id="ano">2026</span> Ana Rochenbach – Acupuntura e Terapias Naturais. As informações deste site são educativas e não substituem consulta médica.</p></div>
+
+<footer class="footer">
+ <div class="wrap foot-grid">
+  <div>
+   <a class="brand brand-foot" href="#topo">
+    <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="2"/><path d="M32 4a28 28 0 0 1 0 56 14 14 0 0 1 0-28 14 14 0 0 0 0-28z" fill="currentColor"/><circle cx="32" cy="18" r="4" fill="#fff"/><circle cx="32" cy="46" r="4" fill="currentColor"/></svg>
+    <span>Ana Rochenbach<small>Acupuntura e Terapias Naturais</small></span>
+   </a>
+   <p>Acupunturista em Alphaville, Barueri. Atendimento com hora marcada.</p>
+  </div>
+  <div><h3>Páginas</h3><ul>
+   <li><a href="#tratamentos">Tratamentos</a></li>
+   <li><a href="#clinica">A clínica</a></li>
+   <li><a href="#duvidas">Dúvidas frequentes</a></li>
+   <li><a href="#avaliacoes">Avaliações</a></li>
+   <li><a href="#contato">Contato</a></li>
+  </ul></div>
+  <div><h3>Contato</h3><ul>
+   <li><a href="https://wa.me/5566992344454" target="_blank" rel="noopener">WhatsApp (66) 99234-4454</a></li>
+   <li>Av. Cauaxi, 293 - Sl 314 - Alphaville Centro Industrial, Barueri - SP, 06454-020</li>
+   <li>Fecha às 18:00</li>
+  </ul></div>
+ </div>
+ <div class="wrap legal"><p>© <span id="ano">2026</span> Ana Rochenbach – Acupuntura e Terapias Naturais. As informações deste site são educativas e não substituem consulta médica.</p></div>
 </footer>
-<a class="wa-float" href="https://wa.me/5566992344454?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.500l1.600-5.400A8.500 8.500 0 1 1 21 11.500z"/></svg></a>
-<script src="js/main.js"></script>
-</body></html>
+
+<a class="wa-float" href="https://wa.me/5566992344454?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+ <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.5 8.5 0 1 1 21 11.5z"/></svg>
+</a>
+
+<script>
+(function(){
+  var btn=document.querySelector('.menu-btn'),menu=document.getElementById('menu'),header=document.querySelector('.header');
+
+  function closeMenu(){
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+  }
+
+  // Menu mobile
+  btn.addEventListener('click',function(){
+    var o=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded',String(o));
+  });
+
+  // Submenus
+  document.querySelectorAll('.sub-toggle').forEach(function(b){
+    b.addEventListener('click',function(){
+      var li=b.parentElement,o=li.classList.toggle('open');
+      b.setAttribute('aria-expanded',String(o));
+    });
+  });
+
+  // Fecha o menu ao clicar em um link (mobile)
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      closeMenu();
+      document.querySelectorAll('.has-sub.open').forEach(function(l){l.classList.remove('open')});
+    });
+  });
+
+  // ESC fecha submenus e menu
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){
+      document.querySelectorAll('.has-sub.open').forEach(function(l){l.classList.remove('open')});
+      closeMenu();
+    }
+  });
+
+  // Sombra no header ao rolar
+  window.addEventListener('scroll',function(){
+    header.classList.toggle('scrolled',window.scrollY>10);
+  },{passive:true});
+
+  // Ano automático
+  var y=document.getElementById('ano');
+  if(y)y.textContent=new Date().getFullYear();
+
+  // Animação de entrada
+  var items=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}
+      });
+    },{threshold:.12});
+    items.forEach(function(el){io.observe(el)});
+  }else{
+    items.forEach(function(el){el.classList.add('in')});
+  }
+
+  // Link ativo no menu conforme a seção
+  var links=[].slice.call(menu.querySelectorAll('#menu>ul>li>a'));
+  if('IntersectionObserver' in window){
+    var map={};
+    links.forEach(function(a){var id=a.getAttribute('href').slice(1);if(id)map[id]=a});
+    var so=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          links.forEach(function(a){a.classList.remove('active')});
+          if(map[en.target.id])map[en.target.id].classList.add('active');
+        }
+      });
+    },{rootMargin:'-40% 0px -55% 0px'});
+    Object.keys(map).forEach(function(id){
+      var s=document.getElementById(id);
+      if(s&&id!=='topo')so.observe(s);
+    });
+  }
+
+  // Formulário -> WhatsApp
+  var f=document.getElementById('form-wa');
+  if(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var t='Olá, meu nome é '+f.nome.value.trim()+'. Motivo: '+f.motivo.value+'.'+(f.msg.value.trim()?' '+f.msg.value.trim():'');
+      window.open('https://wa.me/5566992344454?text='+encodeURIComponent(t),'_blank','noopener');
+    });
+  }
+})();
+</script>
+</body>
+</html>
